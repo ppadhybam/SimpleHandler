@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -18,14 +19,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.textView);
-        thread = new Thread(new MyThread());
-        thread.start();
         handler = new Handler(){
             @Override
             public void handleMessage(Message msg) {
                 textView.setText(msg.arg1+"");
             }
         };
+    }
+
+    public void startThread(View view) {
+        thread = new Thread(new MyThread());
+        thread.start();
+    }
+
+    public void stopThread(View view) {
+        if(thread.isAlive())
+            thread.stop();
     }
 
     public class MyThread implements Runnable {

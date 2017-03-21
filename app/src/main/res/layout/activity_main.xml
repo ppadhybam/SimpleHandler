@@ -28,15 +28,4 @@
         android:layout_marginTop="53dp"
         android:onClick="startThread"
         android:text="Start" />
-
-    <Button
-        android:id="@+id/btnStopThread"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnStartThread"
-        android:layout_alignStart="@+id/btnStartThread"
-        android:layout_below="@+id/btnStartThread"
-        android:layout_marginTop="23dp"
-        android:onClick="stopThread"
-        android:text="Stop" />
 </RelativeLayout>

@@ -32,11 +32,6 @@ public class MainActivity extends AppCompatActivity {
         thread.start();
     }
 
-    public void stopThread(View view) {
-        if(thread.isAlive())
-            thread.stop();
-    }
-
     public class MyThread implements Runnable {
 
         @Override
